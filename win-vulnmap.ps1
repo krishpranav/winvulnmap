@@ -30,4 +30,12 @@ https://github.com/yavuzatlas/vulmap-windows
 
 #>
 
+    Param (
+        [switch] $DefaultMode,
+        [switch] $OnlyExploitableVulns,
+        [string] $DownloadExploit = "",
+        [switch] $DownloadAllExploits,
+        [switch] $Help
+    )
+
 }
