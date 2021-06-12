@@ -62,6 +62,16 @@ https://github.com/yavuzatlas/vulmap-windows
 
             ForEach ($key in $subkeys) {
                 $DisplayName = $key.getValue('DisplayName');
+
+                if (![string]::IsNullOrEmpty($DisplayName)) {
+                    $DisplayVersion = $key.GetValue('DisplayVersion');
+
+                    $Object = [pscustomobject]@{
+                        DisplayName = $DisplayName.Trim();
+                        DisplayVersion = $DisplayVersion;
+                        NameVersionPair = $DisplayName.Trim() + $DisplayVersion;
+                    }
+                }
             }
         }
     }
