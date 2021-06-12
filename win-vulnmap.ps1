@@ -50,9 +50,20 @@ https://github.com/yavuzatlas/vulmap-windows
         
         $postParams = @{querydata = $json_request_data}
         return (Invoke-WebRequest -Uri https://vulmon.com/scannerapi_vv211 -Method POST -Body $postParams).Content
+    }
 
+    function Get-ProductList() {
+        $registry_paths = ("HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall") 
 
+        $objectArray = @();
 
+        foreach ($registry_paths in $registry_paths) {
+            $subkeys = Get-ChildItem -Path $registry_path
+
+            ForEach ($key in $subkeys) {
+                $DisplayName = $key.getValue('DisplayName');
+            }
+        }
     }
 
 }
