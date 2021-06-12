@@ -1,0 +1,33 @@
+function Invoke-WinVulmap {
+    <#
+.SYNOPSIS
+Local vulnerability scanner
+.DESCRIPTION
+Gets installed software information from the local host and asks to vulmon.com if vulnerabilities and exploits exists. 
+.PARAMETER DefaultMode
+Conducts a vulnerability scanning. Default mode.
+.PARAMETER OnlyExploitableVulns
+Conducts a vulnerability scanning and only shows vulnerabilities that have exploits.
+.PARAMETER DownloadExploit
+Downloads given exploit.
+.PARAMETER DownloadAllExploits
+Scans the computer and downloads all available exploits.
+.EXAMPLE
+PS> Invoke-WinVulmap
+Default mode. Conducts a vulnerability scanning.
+.EXAMPLE
+PS> Invoke-WinVulmap -OnlyExploitableVulns
+Conducts a vulnerability scanning and only shows vulnerabilities that have exploits
+.EXAMPLE
+PS> Invoke-WinVulmap -DownloadExploit EDB9386
+Downloads given exploit
+.EXAMPLE
+PS> Invoke-WinVulmap -DownloadAllExploits
+Scans the computer and downloads all available exploits
+.LINK
+https://github.com/krishpranav/winvulnmap
+https://github.com/yavuzatlas/vulmap-windows
+
+#>
+
+}
