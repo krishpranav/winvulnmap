@@ -10,20 +10,20 @@ git clone https://github.com/krishpranav/winvulnmap
 
 - Default mode does a vulnerability scanning:
 ```
-PS> Invoke-Vulmap
+PS> Invoke-WinVulmap
 ```
 
 - Conducts a vulnerability scanning and only shows vulnerabilities that have exploits:
 ```
-PS> Invoke-Vulmap -OnlyExploitableVulns
+PS> Invoke-WinVulmap -OnlyExploitableVulns
 ```
 
 - Download given exploit:
 ```
-PS> Invoke-Vulmap -DownloadExploit EDB9386
+PS> Invoke-WinVulmap -DownloadExploit EDB9386
 ```
 
 - Scans the whole computer and download all available exploits:
 ```
-PS> Invoke-Vulmap -DownloadAllExploits
+PS> Invoke-WinVulmap -DownloadAllExploits
 ```
