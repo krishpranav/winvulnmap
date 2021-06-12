@@ -38,4 +38,7 @@ https://github.com/yavuzatlas/vulmap-windows
         [switch] $Help
     )
 
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+
+
 }
