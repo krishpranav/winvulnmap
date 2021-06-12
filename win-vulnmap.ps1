@@ -48,6 +48,10 @@ https://github.com/yavuzatlas/vulmap-windows
         $json_request_data = $json_request_data + $product_list
         $json_request_data = $json_request_data + '}'
         
+        $postParams = @{querydata = $json_request_data}
+        return (Invoke-WebRequest -Uri https://vulmon.com/scannerapi_vv211 -Method POST -Body $postParams).Content
+
+
 
     }
 
