@@ -40,5 +40,15 @@ https://github.com/yavuzatlas/vulmap-windows
 
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
 
+    function Send-Request($ProductList) {
+        $product_list = '"product_list": ' + $ProductList
+
+        $json_request_data = '{'
+        $json_request_data = $json_request_data + '"os": "' + (Get-CimInstance Win32_OperatingSystem).Caption + '",'
+        $json_request_data = $json_request_data + $product_list
+        $json_request_data = $json_request_data + '}'
+        
+
+    }
 
 }
