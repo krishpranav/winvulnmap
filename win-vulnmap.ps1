@@ -71,9 +71,15 @@ https://github.com/yavuzatlas/vulmap-windows
                         DisplayVersion = $DisplayVersion;
                         NameVersionPair = $DisplayName.Trim() + $DisplayVersion;
                     }
+
+                    $Object.pstypenames.insert(0, 'System.Software.Inventory')
+
+                    $objectArray += $Object
                 }
             }
         }
+
+        $objectArray | sort-object NameVersionPair -unique;
     }
 
 }
